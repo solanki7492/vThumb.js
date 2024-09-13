@@ -106,7 +106,7 @@ export const generateVideoThumbnails = async (videoFile: File, numberOfThumbnail
  * @param {number} videoTimeInSeconds Timeframe of video [at this particular time the thumbnail will be generated]
  * @returns {string} Returns an Array of `base64` Images
  */
-const getVideoThumbnail = (file: File | string, videoTimeInSeconds: number): Promise<string> => {
+export const getVideoThumbnail = (file: File | string, videoTimeInSeconds: number): Promise<string> => {
     return new Promise((resolve, reject) => {
         if ((file as File)?.type?.match("video")) {
             importFileandPreview(file as File).then((urlOfFIle) => {
